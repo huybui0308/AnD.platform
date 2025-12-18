@@ -109,7 +109,7 @@ class ServiceSLASerializer(serializers.Serializer):
     service_name = serializers.CharField()
     status = serializers.CharField()
     sla_percentage = serializers.FloatField()
-    last_check = serializers.DateTimeField()
+    last_check = serializers.DateTimeField(allow_null=True)
 
 
 class TeamDetailSerializer(serializers.Serializer):

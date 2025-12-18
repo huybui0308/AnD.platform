@@ -21,16 +21,3 @@ class IsAdminOrStaff(BasePermission):
             request.user.is_authenticated and
             (request.user.is_staff or request.user.is_superuser)
         )
-
-
-class AllowAny(BasePermission):
-    """
-    Permission class for public APIs
-    Allows access to anyone (no authentication required)
-    """
-    
-    def has_permission(self, request, view):
-        """
-        Allow all requests
-        """
-        return True

@@ -18,7 +18,7 @@ from gameserver.api.serializers import (
     TickInfoSerializer,
     ServiceSLASerializer
 )
-from gameserver.api.permissions import AllowAny
+from rest_framework.permissions import AllowAny
 from gameserver.api.utils import StandardAPIResponse
 from gameserver.config import game_config
 
