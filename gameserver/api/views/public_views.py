@@ -19,35 +19,10 @@ from gameserver.api.serializers import (
     ServiceSLASerializer
 )
 from gameserver.api.permissions import AllowAny
+from gameserver.api.utils import StandardAPIResponse
 from gameserver.config import game_config
 
 logger = logging.getLogger(__name__)
-
-
-class StandardAPIResponse:
-    """
-    Helper class to standardize API responses
-    """
-    
-    @staticmethod
-    def success(data=None, message="Success"):
-        """Return successful response"""
-        return Response({
-            'success': True,
-            'data': data or {},
-            'message': message,
-            'timestamp': timezone.now().isoformat()
-        }, status=status.HTTP_200_OK)
-    
-    @staticmethod
-    def error(message, status_code=status.HTTP_400_BAD_REQUEST, data=None):
-        """Return error response"""
-        return Response({
-            'success': False,
-            'data': data or {},
-            'message': message,
-            'timestamp': timezone.now().isoformat()
-        }, status=status_code)
 
 
 class ScoreboardView(APIView):

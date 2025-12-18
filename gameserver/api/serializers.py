@@ -144,5 +144,5 @@ class TickInfoSerializer(serializers.Serializer):
     """
     current_tick = serializers.IntegerField()
     tick_duration_seconds = serializers.IntegerField()
-    next_tick_time = serializers.DateTimeField()
+    next_tick_time = serializers.DateTimeField(allow_null=True)
     game_status = serializers.CharField()
